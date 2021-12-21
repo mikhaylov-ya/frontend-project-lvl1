@@ -11,3 +11,6 @@ lint:
 	npx eslint .
 fix: 
 	npx eslint --fix .
+brain-even:
+	node bin/brain-even.js
+	
