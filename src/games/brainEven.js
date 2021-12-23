@@ -1,4 +1,3 @@
-// import readlineSync from 'readline-sync';
 import random from 'lodash/random.js';
 import playBrainGame from '../index.js';
 

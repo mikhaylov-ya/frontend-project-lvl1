@@ -8,3 +8,6 @@
 
 ## Brain-calc game demonstration
 [![asciicast](https://asciinema.org/a/mlh64pLVF0OFAY73vgMWaeQzv.svg)](https://asciinema.org/a/mlh64pLVF0OFAY73vgMWaeQzv)
+
+## Brain-GCD (greatest common divisor) game demonstration
+[![asciicast](https://asciinema.org/a/9bjLezadkv4MMvO6bS0536Jvz.svg)](https://asciinema.org/a/9bjLezadkv4MMvO6bS0536Jvz)
