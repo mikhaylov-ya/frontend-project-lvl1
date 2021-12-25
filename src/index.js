@@ -11,7 +11,7 @@ export default function playBrainGame(msg, randomData, getAnswer) {
 
   do {
     const question = randomData();
-    console.log(question);
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     const userAnswer = answer.toLowerCase();
     const isCorrect = getAnswer(question);
