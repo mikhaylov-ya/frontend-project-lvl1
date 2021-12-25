@@ -5,8 +5,7 @@ export default function brainCalc() {
   const randomNum = () => random(1, 100);
   const operators = ['+', '-', '*'];
   const randomOperator = operators[Math.floor(Math.random() * 3)];
-  const randomExpression = () =>
-    `${randomNum()} ${randomOperator} ${randomNum()}`;
+  const randomExpression = () => `${randomNum()} ${randomOperator} ${randomNum()}`;
 
   const getAnswer = (exp) => {
     const [fst, op, snd] = exp.split(' ');

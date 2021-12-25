@@ -23,14 +23,12 @@ export default function brainProgression() {
   const getAnswer = (exp) => {
     const arrExp = exp.split(' ');
     const missMembIndx = arrExp.indexOf('..');
-    const progrStep =
-      missMembIndx === 8 || missMembIndx === 9
-        ? Number(arrExp[3]) - Number(arrExp[2])
-        : Number(arrExp[9]) - Number(arrExp[8]);
-    const answer =
-      missMembIndx === 0
-        ? Number(arrExp[missMembIndx + 1]) - progrStep
-        : Number(arrExp[missMembIndx - 1]) + progrStep;
+    const progrStep = missMembIndx === 8 || missMembIndx === 9
+      ? Number(arrExp[3]) - Number(arrExp[2])
+      : Number(arrExp[9]) - Number(arrExp[8]);
+    const answer = missMembIndx === 0
+      ? Number(arrExp[missMembIndx + 1]) - progrStep
+      : Number(arrExp[missMembIndx - 1]) + progrStep;
     return answer.toString();
   };
   playBrainGame(msg, randomArithProgression, getAnswer);

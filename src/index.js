@@ -17,7 +17,7 @@ export default function playBrainGame(msg, randomData, getAnswer) {
     const isCorrect = getAnswer(question);
     if (userAnswer !== isCorrect) {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${isCorrect}'.\nLet's try again, ${userName}!`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${isCorrect}'.\nLet's try again, ${userName}!`,
       );
       break;
     } else if (userAnswer === isCorrect) {
