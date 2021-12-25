@@ -4,7 +4,6 @@ import playBrainGame from '../index.js';
 export default function brainPrime() {
   const randomNum = () => random(1, 100);
   const msg = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
   function isPrime(num) {
     let result = 'yes';
     if (num <= 1) return 'no';
@@ -16,9 +15,7 @@ export default function brainPrime() {
     }
     return result;
   }
+  const getAnswer = (num) => isPrime(num);
 
-  const getAnswer = (num) => {
-    return isPrime(num);
-  };
   playBrainGame(msg, randomNum, getAnswer);
 }
