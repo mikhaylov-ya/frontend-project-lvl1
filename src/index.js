@@ -14,13 +14,13 @@ export default function playBrainGame(msg, randomData, getAnswer) {
     console.log(question);
     const answer = readlineSync.question('Your answer: ');
     const userAnswer = answer.toLowerCase();
-    const isCorrest = getAnswer(question);
-    if (userAnswer !== isCorrest) {
+    const isCorrect = getAnswer(question);
+    if (userAnswer !== isCorrect) {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${isCorrest}'.\nLet's try again, ${userName}!`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${isCorrect}'.\nLet's try again, ${userName}!`
       );
       break;
-    } else if (userAnswer === isCorrest) {
+    } else if (userAnswer === isCorrect) {
       console.log('Correct!');
       winCount += 1;
     }
