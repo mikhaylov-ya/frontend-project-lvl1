@@ -1,32 +1,25 @@
 import readlineSync from 'readline-sync';
-// import random from 'lodash/random.js';
 
-export default function playBrainGame(msg, randomData, getAnswer) {
-  let winCount = 0;
-
+export default function playBrainGame(msg, task) {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log(msg);
+  console.log(`Hello, ${userName}!\n${msg}`);
 
-  do {
-    const question = randomData();
+  for (let winCount = 0; winCount < 3; winCount += 1) {
+    const [question, answer] = task();
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
-    const userAnswer = answer.toLowerCase();
-    const isCorrect = getAnswer(question);
-    if (userAnswer !== isCorrect) {
+    const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswerNorm = userAnswer.toLowerCase();
+    if (userAnswerNorm !== answer) {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${isCorrect}'.\nLet's try again, ${userName}!`,
+        `'${userAnswerNorm}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${userName}!`,
       );
       break;
-    } else if (userAnswer === isCorrect) {
+    } else if (userAnswerNorm === answer) {
       console.log('Correct!');
-      winCount += 1;
     }
-
-    if (winCount === 3) {
+    if (winCount === 2) {
       console.log(`Congratulations, ${userName}!`);
     }
-  } while (winCount < 3);
+  }
 }

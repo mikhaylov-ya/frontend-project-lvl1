@@ -1,14 +1,14 @@
 import random from 'lodash/random.js';
 import playBrainGame from '../index.js';
 
-export default function brainEven() {
-  const randomNum = () => random(1, 100);
-  const msg = 'Answer "yes" if the number is even, otherwise answer "no".';
-  function isEven(num) {
-    if (num % 2 === 0) return true;
-    return false;
-  }
-  const getAnswer = (num) => (isEven(num) ? 'yes' : 'no');
+const getAnswer = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
-  playBrainGame(msg, randomNum, getAnswer);
+export default function brainEven() {
+  const msg = 'Answer "yes" if the number is even, otherwise answer "no".';
+  function task() {
+    const question = random(1, 100);
+    const answer = getAnswer(question);
+    return [question, answer];
+  }
+  playBrainGame(msg, task);
 }
