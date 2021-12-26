@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/mikhaylov-ya/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/mikhaylov-ya/frontend-project-lvl1/actions)[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Actions Status](https://github.com/mikhaylov-ya/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/mikhaylov-ya/frontend-project-lvl1/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f656d8e2d12b31acfd7e/maintainability)](https://codeclimate.com/github/mikhaylov-ya/frontend-project-lvl1/maintainability)
 ![eslint-check](https://github.com/mikhaylov-ya/frontend-project-lvl1/actions/workflows/eslint.yml/badge.svg)
 
 ## Installing package and Brain-Even game demonstration
