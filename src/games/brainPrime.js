@@ -1,25 +1,24 @@
 import random from 'lodash/random.js';
 import playBrainGame from '../index.js';
 
+const message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 function isPrime(num) {
-  let result = 'yes';
   if (num <= 1) return 'no';
-  for (let n = 2; n <= num / 2; n += 1) {
-    if (num % n === 0) {
-      result = 'no';
-      break;
+  for (let divisor = 2; divisor <= num / 2; divisor += 1) {
+    if (num % divisor === 0) {
+      return 'no';
     }
   }
-  return result;
+  return 'yes';
 }
 
-const getAnswer = (num) => isPrime(num);
+function genTask() {
+  const question = random(1, 100);
+  const answer = isPrime(question);
+  return [question, answer];
+}
+
 export default function brainPrime() {
-  const msg = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  function task() {
-    const question = random(1, 100);
-    const answer = getAnswer(question);
-    return [question, answer];
-  }
-  playBrainGame(msg, task);
+  playBrainGame(message, genTask);
 }
