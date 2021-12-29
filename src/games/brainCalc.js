@@ -4,8 +4,7 @@ import playBrainGame from '../index.js';
 const message = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
-// num переименовывать не буду -- это общеизвестное и допустимое сокращение
-const getAnswer = (num1, num2, operation) => {
+const calculate = (num1, num2, operation) => {
   switch (operation) {
     case '+':
       return (num1) + (num2);
@@ -21,12 +20,12 @@ const getAnswer = (num1, num2, operation) => {
 function genTask() {
   const firstNum = random(1, 100);
   const secondNum = random(1, 100);
-  const operator = operators[random(0, 2)];
+  const operator = operators[random(0, operators.length - 1)];
   const question = `${firstNum} ${operator} ${secondNum}`;
-  const answer = getAnswer(firstNum, secondNum, operator);
+  const answer = calculate(firstNum, secondNum, operator).toString();
   return [question, answer];
 }
 
-export default function brainCalc() {
+export default () => {
   playBrainGame(message, genTask);
-}
+};

@@ -3,22 +3,24 @@ import playBrainGame from '../index.js';
 
 const message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function isPrime(num) {
-  if (num <= 1) return 'no';
+const isPrime = (num) => {
+  if (num <= 1) return false;
   for (let divisor = 2; divisor <= num / 2; divisor += 1) {
     if (num % divisor === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
-}
+  return true;
+};
 
-function genTask() {
+const getAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
+
+const genTask = () => {
   const question = random(1, 100);
-  const answer = isPrime(question);
+  const answer = getAnswer(question);
   return [question, answer];
-}
+};
 
-export default function brainPrime() {
+export default () => {
   playBrainGame(message, genTask);
-}
+};

@@ -19,10 +19,10 @@ function genTask() {
   const firstNum = random(1, 100);
   const secondNum = random(1, 100);
   const question = `${firstNum} ${secondNum}`;
-  const answer = getGCD(firstNum, secondNum);
+  const answer = getGCD(firstNum, secondNum).toString();
   return [question, answer];
 }
 
-export default function brainGCD() {
+export default () => {
   playBrainGame(message, genTask);
-}
+};

@@ -3,9 +3,9 @@ import playBrainGame from '../index.js';
 
 const message = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function getAnswer(num) {
-  return num % 2 === 0 ? 'yes' : 'no';
-}
+const isEven = (num) => (num % 2 === 0);
+
+const getAnswer = (num) => (isEven(num) ? 'yes' : 'no');
 
 function genTask() {
   const question = random(1, 100);
@@ -13,6 +13,6 @@ function genTask() {
   return [question, answer];
 }
 
-export default function brainEven() {
+export default () => {
   playBrainGame(message, genTask);
-}
+};
