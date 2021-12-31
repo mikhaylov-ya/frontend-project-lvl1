@@ -15,7 +15,7 @@ const getGCD = (num1, num2) => {
   return first;
 };
 
-function genTask() {
+const genTask = () => {
   const firstNum = random(1, 100);
   const secondNum = random(1, 100);
   const question = `${firstNum} ${secondNum}`;

@@ -13,11 +13,9 @@ const isPrime = (num) => {
   return true;
 };
 
-const getAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
-
 const genTask = () => {
   const question = random(1, 100);
-  const answer = getAnswer(question);
+  const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
 
