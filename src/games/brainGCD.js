@@ -21,7 +21,7 @@ const genTask = () => {
   const question = `${firstNum} ${secondNum}`;
   const answer = getGCD(firstNum, secondNum).toString();
   return [question, answer];
-}
+};
 
 export default () => {
   playBrainGame(message, genTask);
