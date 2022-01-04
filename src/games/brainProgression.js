@@ -1,10 +1,9 @@
 import random from 'lodash/random.js';
-import playBrainGame from '../index.js';
+import playBrainGame, { roundCount } from '../index.js';
 
-const message = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 
 const length = 10;
-// С НАСТУПАЮШИМ!
 const randomArithmeticProgression = (first, progressionStep, progressionLength) => {
   const expression = [];
   for (let i = 0; i < progressionLength; i += 1) {
@@ -30,5 +29,9 @@ const genTask = () => {
 };
 
 export default () => {
-  playBrainGame(message, genTask);
+  const rounds = [];
+  for (let round = 0; round < roundCount; round += 1) {
+    rounds.push(genTask());
+  }
+  playBrainGame(gameDescription, rounds);
 };

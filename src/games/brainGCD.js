@@ -1,7 +1,7 @@
 import random from 'lodash/random.js';
-import playBrainGame from '../index.js';
+import playBrainGame, { roundCount } from '../index.js';
 
-const message = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (num1, num2) => {
   let temp = 0;
@@ -24,5 +24,9 @@ const genTask = () => {
 };
 
 export default () => {
-  playBrainGame(message, genTask);
+  const rounds = [];
+  for (let round = 0; round < roundCount; round += 1) {
+    rounds.push(genTask());
+  }
+  playBrainGame(gameDescription, rounds);
 };
