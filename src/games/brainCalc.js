@@ -1,5 +1,5 @@
 import random from 'lodash/random.js';
-import playBrainGame, { roundCount } from '../index.js';
+import playBrainGame, { roundsCount } from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
@@ -28,7 +28,7 @@ const genTask = () => {
 
 export default () => {
   const rounds = [];
-  for (let round = 0; round < roundCount; round += 1) {
+  for (let round = 0; round < roundsCount; round += 1) {
     rounds.push(genTask());
   }
   playBrainGame(gameDescription, rounds);
